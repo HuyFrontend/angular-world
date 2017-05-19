@@ -1,13 +1,11 @@
 import {Component, View} from "angular2/core";
 
 @Component({
-   selector: 'my-app'
+   selector: 'my-appA'
 })
 
 @View({
-  template: '<h2>My First Angular 2 App</h2>'
+  template: '<h2>My first app</h2>'
 })
 
-export class AppComponent {
-
-}
+export class AppComponent {}

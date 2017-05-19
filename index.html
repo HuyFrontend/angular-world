@@ -16,7 +16,12 @@
         packages: {'app': {defaultExtension: 'ts'}},
         map: { 'app': './app' }
       });
-      System.import('app/environment_main')
+
+      // load ts main file
+      // System.import('app/environment_main')
+      //       .then(null, console.error.bind(console));
+
+      System.import('app/app')
             .then(null, console.error.bind(console));
     </script>
   </head>
