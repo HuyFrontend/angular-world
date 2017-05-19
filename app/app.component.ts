@@ -1,6 +1,8 @@
 import { Component } from 'angular2/core';
 import { CoursesComponent } from './course.component';
 import { TeamsComponent } from './team.component';
+import { TwowayComponent } from './two-way-binding.component';
+
 
 
 
@@ -11,7 +13,7 @@ import { TeamsComponent } from './team.component';
   //   <teams><teams>`,
   templateUrl: './app/app.component.html',
   styleUrls: ['./app/app.component.css'],
-  directives: [CoursesComponent, TeamsComponent]
+  directives: [CoursesComponent, TeamsComponent, TwowayComponent]
 })
 
 export class AppComponent {

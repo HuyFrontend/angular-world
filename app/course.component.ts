@@ -6,8 +6,8 @@ import {NewCourseDirective} from './add-new-course.directive';
 @Component({
   selector: 'courses',
   template: `
+    <h1>{{ title }}</h1>
     <h2>Courses</h2>
-    {{ title }}
     <input type="text" autoGrow />
     <button type="text" addNewCourse>Add</button>
     <ul>
@@ -21,7 +21,7 @@ import {NewCourseDirective} from './add-new-course.directive';
 })
 
 export class CoursesComponent {
-  title = 'New course';
+  title = 'Angular Directive';
   //courses = ['1', '2', '3'];
   // use service
   courses;
