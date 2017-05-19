@@ -14,4 +14,8 @@ import { TeamsComponent } from './team.component';
   directives: [CoursesComponent, TeamsComponent]
 })
 
-export class AppComponent {}
+export class AppComponent {
+  employee = {
+    name:'Le Hui'
+  };
+}
