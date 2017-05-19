@@ -1,6 +1,7 @@
 {
-  "name": "angular2-demo",
+  "name": "angular-helloword",
   "version": "1.0.0",
+  "description": "",
   "scripts": {
     "start": "concurrent \"npm run tsc:w\" \"npm run lite\" ",
     "tsc": "tsc",
