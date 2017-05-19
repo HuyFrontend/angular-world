@@ -17,5 +17,6 @@ import { TeamsComponent } from './team.component';
 export class AppComponent {
   employee = {
     name:'Le Hui'
-  };
+  }
+  fruits = ['banana', 'lemon'];
 }
