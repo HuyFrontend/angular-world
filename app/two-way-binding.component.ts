@@ -14,7 +14,7 @@ import {Component, Input, Output, EventEmitter} from 'angular2/core';
 })
 
 export class TwowayComponent {
-  title = 'Two way binding in angular';
+  title = 'Two way binding in angular we use @Input and @Output';
   btnName: string = 'Click me';
   @Input() count = 0;
   @Output() countChange: EventEmitter<number> = new EventEmitter();

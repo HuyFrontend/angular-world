@@ -19,6 +19,6 @@ import { TwowayComponent } from './two-way-binding.component';
 export class AppComponent {
   employee = {
     name:'Le Hui'
-  }
+  };
   fruits = ['banana', 'lemon'];
 }
