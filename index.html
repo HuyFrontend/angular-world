@@ -13,8 +13,33 @@
       System.config({
         transpiler: 'typescript',
         typescriptOptions: { emitDecoratorMetadata: true },
-        packages: {'app': {defaultExtension: 'ts'}},
-        map: { 'app': './app' }
+        packages: {
+          'app': {
+            defaultExtension: 'ts'
+          },
+          '@angular/http': {
+            defaultExtension: 'js'
+          }
+        },
+        map: {
+          'app': './app',
+          // angular bundles
+          '@angular/core':'angular2/core',
+          //'@angular/core': 'npm:@angular/core/bundles/core.umd.js',
+          '@angular/common': 'angular2/common',
+          '@angular/compiler': 'angular2/compiler',
+          '@angular/platform-browser': 'angular2/platform-browser',
+          '@angular/platform-browser-dynamic': 'angular2/platform-browser-dynamic',
+          //'@angular/http': 'angular2/http',
+          '@angular/http': '@angular/http/bundles/http.umd.js',
+          '@angular/router': 'angular2/router',
+          '@angular/forms': 'angular2/forms',
+          '@angular/upgrade': 'angular2/upgrade',
+
+          // other libraries
+          'rxjs': 'rxjs'
+
+        }
       });
 
       // load ts main file

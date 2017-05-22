@@ -1,0 +1,16 @@
+<table>
+    <thead>
+        <tr>
+            <td>Name</td>
+            <td>Age</td>
+            <td>Phone</td>
+        </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor let emp of employeeList>
+            <td> {{employeeList.name}} </td>
+            <td> {{employeeList.age}} </td>
+            <td> {{employeeList.phone}} </td>
+        </tr>
+    </tbody>
+</table>

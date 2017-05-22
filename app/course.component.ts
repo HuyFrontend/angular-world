@@ -1,4 +1,4 @@
-import {Component} from 'angular2/core';
+import {Component} from '@angular/core';
 import {CourseService} from './course.service';
 import {AutoGrowDirective} from './auto-grow.directive';
 import {NewCourseDirective} from './add-new-course.directive';

@@ -3,6 +3,7 @@ import { CoursesComponent } from './course.component';
 import { TeamsComponent } from './team.component';
 import { TwowayComponent } from './two-way-binding.component';
 
+import { EmployeeListComponent } from './employee/employee.component';
 
 
 
@@ -13,7 +14,7 @@ import { TwowayComponent } from './two-way-binding.component';
   //   <teams><teams>`,
   templateUrl: './app/app.component.html',
   styleUrls: ['./app/app.component.css'],
-  directives: [CoursesComponent, TeamsComponent, TwowayComponent]
+  directives: [CoursesComponent, TeamsComponent, TwowayComponent, EmployeeListComponent]
 })
 
 export class AppComponent {
