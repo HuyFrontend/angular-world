@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Http, Response, Request, Headers, RequestMethod, RequestOptions } from '@angular/http';
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
+import { Employee } from './employee.model';
 
 @Injectable()
 
@@ -41,7 +42,7 @@ export class EmployeeService {
     getListByPromise(): Promise<any[]> {
       return this.http
         .get(this.apiUrl).toPromise()
-        .then(this.extractData)
+        .then(response => response.json().data)
         .catch(this.handleErrorPromise);
     }
     addBookWithPromise(employee: any[]): Promise<any> {
@@ -51,16 +52,51 @@ export class EmployeeService {
     }
 
     getListByObservable(): Observable<any[]> {
-      return this.http
-        .get(this.apiUrl)
+      return this.http.get(this.apiUrl)
         .map((response: Response) => response.json());
     }
     // Http.post() - post(url: string, body: any, options?: RequestOptionsArgs) : Observable<Response>
-    addEmployeeWithObservable(employee: any[]): Observable<any[]> {
-      return this.http
-        .post(this.apiUrl, employee, this.options)
+    addEmployeeWithObservable(body: Object): Observable<Employee[]> {
+      let bodyString = JSON.stringify(body);
+
+      return this.http.post(this.apiUrl, body, this.options)
         .map(this.extractData)
         .catch(this.handleErrorObservable);
     }
+    removeEmployeeObservable (id:string): Observable<Employee[]> {
+      return this.http.delete(`${this.apiUrl}/${id}`)
+       .map((res: Response) => res.json())
+       .catch((error:any) => Observable.throw(error.json().error || 'Server error'));
+    }
 
 }
+
+/*
+ // Add a new comment
+    addComment (body: Object): Observable<Comment[]> {
+        let bodyString = JSON.stringify(body); // Stringify payload
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
+
+        return this.http.post(this.commentsUrl, body, options) // ...using post request
+                         .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+                         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    }
+
+    // Update a comment
+    updateComment (body: Object): Observable<Comment[]> {
+        let bodyString = JSON.stringify(body); // Stringify payload
+        let headers = new Headers({ 'Content-Type': 'application/json' }); // ... Set content type to JSON
+        let options = new RequestOptions({ headers: headers }); // Create a request option
+
+        return this.http.put(`${this.commentsUrl}/${body['id']}`, body, options) // ...using put request
+                         .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+                         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    }
+    // Delete a comment
+    removeComment (id:string): Observable<Comment[]> {
+        return this.http.delete(`${this.commentsUrl}/${id}`) // ...using put request
+                         .map((res:Response) => res.json()) // ...and calling .json() on the response to return data
+                         .catch((error:any) => Observable.throw(error.json().error || 'Server error')); //...errors if any
+    }
+   */
