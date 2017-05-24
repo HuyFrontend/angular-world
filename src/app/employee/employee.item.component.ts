@@ -27,7 +27,6 @@ export class EmployeeItemComponent {
     constructor(private employeeService: EmployeeService){}
     // Define input properties
     @Input() employee: Employee;
-    @Input() listId: string;
 
     editComment(){
     }
@@ -35,6 +34,7 @@ export class EmployeeItemComponent {
     deleteEmployee(empID:string){
         this.employeeService.removeEmployeeObservable(empID).subscribe(res => {
             console.log('rés', res);
+            location.reload();
             //EmitterService.get(this.listId).emit(res);
         })
     }
