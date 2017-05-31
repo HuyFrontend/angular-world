@@ -7,13 +7,13 @@
       <label for="nameField">Name</label>
       <!--<input type="text" class="form-control" id="name" required> -->
       <!-- [(ngModel)]="name" -> {{name}} - Two way binding -->
-      <input type="text" class="form-control" required [(ngModel)]="model.name" name="nameField" #spyA>
+      <input type="text" class="form-control" required [(ngModel)]="hero.name" name="nameField" #spyA>
       <br>TODO: remove this: {{spyA.className}}
     </div>
     <div class="form-group">
       <label for="alterEgo">Alter Ego</label>
       <!-- <input type="text" class="form-control" id="alterEgo"> -->
-      <input type="text"  class="form-control" [(ngModel)]="model.alterEgo" name="alterEgo">
+      <input type="text"  class="form-control" [(ngModel)]="hero.alterEgo" name="alterEgo">
     </div>
 
     <div class="form-group">
@@ -23,8 +23,8 @@
       </select>
     </div>
     <button type="submit" class="btn btn-success">Submit</button>
-    <div>Re-binding name: {{ model.name }}</div>
-    <div>Re-binding alter Ego: {{ model.alterEgo }}</div>
+    <div>Re-binding name: {{ hero.name }}</div>
+    <div>Re-binding alter Ego: {{ hero.alterEgo }}</div>
     <div>Method get: {{ FirstName }}</div>
   </form>
 </div>
