@@ -36,12 +36,12 @@ export class EmployeeDetailComponent implements OnInit, OnDestroy{
 
         this.employee = this.initEmployee;
 
-        // this.subcription = this.activated.params.subscribe(params => {
-        //     this.id = params['id'];
-        //     console.log(this.id);
-        // });
+        this.subcription = this.activated.params.subscribe(params => {
+            this.id = params['id'];
+            console.log(this.id);
+        });
 
-        //this.getEmployee(this.id);
+        this.getEmployee(this.id);
     }
     ngOnDestroy(){
         //this.subcription.unsubscribe();
