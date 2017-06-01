@@ -6,5 +6,7 @@ export class CheckLoginGuard implements CanActivate {
   constructor(argument) {
     // code...
   }
-  canActivate
+  canActivate(){
+  	return true;
+  }
 }

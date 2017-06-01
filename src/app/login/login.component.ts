@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
+import  { NgForm } from '@angular/forms';
+
 
 @Component({
   selector: 'login',
@@ -7,7 +9,9 @@ import { Router } from '@angular/router';
 })
 export class LoginComponent {
   constructor( private router: Router) {}
-  checkLogin(value: any){
+  //private password: string = '1234';
+  checkLogin(form: NgForm){
+    console.log('value', form.value);
     this.router.navigate(['/']);
   }
 }

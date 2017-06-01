@@ -5,7 +5,11 @@ export class LoginService {
   constructor(argument) {
     // code...
   }
+  isLogged(): boolean{
+  	return this.isLoggedIn;
+  }
   setLogin (isLoggedIn: boolean) {
     this.isLoggedIn = isLoggedIn;
   }
+
 }
