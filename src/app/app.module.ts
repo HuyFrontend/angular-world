@@ -12,6 +12,7 @@ import { NotFoundComponent } from './notfound/notfound.component';
 import { EmployeeDetailComponent } from './employee/employee.detail.component';
 import { EmployeeOverviewComponent } from './employee/employee-overview.component';
 import { EmployeeProjectComponent } from './employee/employee-project.component';
+import { LoginComponent } from './login/login.component';
 import { AppRoutes } from './app.routes';
 
 @NgModule({
@@ -23,7 +24,8 @@ import { AppRoutes } from './app.routes';
     NotFoundComponent,
     EmployeeDetailComponent,
     EmployeeOverviewComponent,
-    EmployeeProjectComponent
+    EmployeeProjectComponent,
+    LoginComponent
   ],
   imports: [ BrowserModule, FormsModule, HttpModule, AppRoutes ],
   providers: [ EmployeeService ],
