@@ -55,6 +55,10 @@ export class EmployeeService {
       return this.http.get(this.apiUrl)
         .map((response: Response) => response.json());
     }
+    getEmployeeObservable(id:number): Observable<any[]> {
+      return this.http.get(this.apiUrl + '/' + id)
+        .map((response: Response) => response.json());
+    }
     // Http.post() - post(url: string, body: any, options?: RequestOptionsArgs) : Observable<Response>
     addEmployeeWithObservable(body: Object): Observable<Employee[]> {
       let bodyString = JSON.stringify(body);

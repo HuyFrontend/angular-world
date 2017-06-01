@@ -15,7 +15,7 @@ import { EmitterService } from '../services/emitter.service';
                 {{employee.age}}
             </div>
             <div class="panel-footer">
-                <button class="btn btn-info" (click)="editComment()"><span class="glyphicon glyphicon-edit">Edit</span></button>
+                <button class="btn btn-info" [routerLink]="['/employee-detail', employee.id]"><span class="glyphicon glyphicon-edit">Edit</span></button>
                 <button class="btn btn-danger" (click)="deleteEmployee(employee.id)"><span class="glyphicon glyphicon-remove">Delete</span></button>
             </div>
         </div>
@@ -27,9 +27,6 @@ export class EmployeeItemComponent {
     constructor(private employeeService: EmployeeService){}
     // Define input properties
     @Input() employee: Employee;
-
-    editComment(){
-    }
 
     deleteEmployee(empID:string){
         this.employeeService.removeEmployeeObservable(empID).subscribe(res => {
