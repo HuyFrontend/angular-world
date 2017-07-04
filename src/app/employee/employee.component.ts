@@ -8,6 +8,7 @@ import { Employee } from './employee.model';
     //templateUrl: './employee.component.html'
     template: `
         <employee-item *ngFor="let emp of employeeList" [employee]="emp"></employee-item>
+        <button class="add-new">Add new</button>
     `,
 })
 
@@ -46,5 +47,13 @@ export class EmployeeComponent implements OnInit, OnChanges {
     }
     ngOnChanges() {
         console.log('this.employeeList3',this.employeeList);
+    }
+
+    addEmployee(empID:string){
+        this.employeeService.removeEmployeeObservable(empID).subscribe(res => {
+            console.log('rés', res);
+            location.reload();
+            //EmitterService.get(this.listId).emit(res);
+        })
     }
 }
