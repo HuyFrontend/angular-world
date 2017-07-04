@@ -8,5 +8,5 @@ import {Observable} from 'rxjs/Rx';
   styleUrls: ['./app.component.css']
 })
 export class AppComponent {
-  title = 'Hello world';
+  title = 'Angular Main Title';
 }

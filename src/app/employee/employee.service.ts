@@ -3,6 +3,7 @@ import { Http, Response, Request, Headers, RequestMethod, RequestOptions } from 
 import { Observable } from 'rxjs/Rx';
 import 'rxjs/add/operator/map';
 import { Employee } from './employee.model';
+import 'rxjs/add/operator/toPromise';
 
 @Injectable()
 
@@ -38,11 +39,14 @@ export class EmployeeService {
       ];
       return employees;
     }
-
+    // promise example - http://www.concretepage.com/angular-2/angular-2-http-post-example
     getListByPromise(): Promise<any[]> {
       return this.http
         .get(this.apiUrl).toPromise()
-        .then(response => response.json().data)
+        .then(response => {
+          console.log('respones',response);
+          return response.json().data ? response.json().data : response.json();
+        })
         .catch(this.handleErrorPromise);
     }
     addBookWithPromise(employee: any[]): Promise<any> {

@@ -24,11 +24,20 @@ export class EmployeeComponent implements OnInit, OnChanges {
     loadEmployees() {
         var that = this;
         //this.employeeList = this.employeeService.getListArray();
-        this.employeeService.getListByObservable().subscribe((res: any) => {
-            this.employeeList = res;
-        }, error => {
-            console.log('API Error');
-        });
+        // this.employeeService.getListByObservable().subscribe((res: any) => {
+        //     this.employeeList = res;
+        // }, error => {
+        //     console.log('API Error');
+        // });
+
+        this.employeeService.getListByPromise()
+            .then( res => {
+                this.employeeList = res;
+                console.log('success');
+            }, error => {
+                this.errorMessage = <any>error;
+                console.log('error');
+            });
     }
 
     // init component
