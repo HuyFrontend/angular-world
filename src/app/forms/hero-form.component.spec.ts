@@ -1,6 +1,6 @@
 import { TestBed, async } from '@angular/core/testing';
 
-//import { HeroFormComponent } from './hero-form.component';
+import { HeroFormComponent } from './hero-form.component';
 
 describe('HeroFormComponent', () => {
   beforeEach(async(() => {

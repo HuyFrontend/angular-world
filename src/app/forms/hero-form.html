@@ -1,7 +1,7 @@
 <div class="container">
   <h1>Hero Form</h1>
   <!-- <form> -->
-  <form #heroForm="ngForm">
+  <form #heroForm="ngForm" (ngSubmit)="onSubmit()">
   <!--The variable heroForm is now a reference to the NgForm directive that governs the form as a whole.-->
     <div class="form-group">
       <label for="nameField">Name</label>
